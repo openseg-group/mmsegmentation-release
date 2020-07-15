@@ -13,6 +13,8 @@
 ## Results and models
 
 ### Cityscapes
+
+#### HRNet backbone
 | Method |      Backbone      | Crop Size | Lr schd | Mem (GB) | Inf time (fps) | mIoU  | mIoU(ms+flip) |                                                                                                                                                                                               download                                                                                                                                                                                               |
 |--------|--------------------|-----------|--------:|----------|----------------|------:|--------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | OCRNet | HRNetV2p-W18-Small | 512x1024  |   40000 |      3.5 |          10.45 | 74.30 |         75.95 | [model](https://openmmlab.oss-accelerate.aliyuncs.com/mmsegmentation/v0.5/ocrnet/ocrnet_hr18s_512x1024_40k_cityscapes/ocrnet_hr18s_512x1024_40k_cityscapes_20200601_033304-fa2436c2.pth) &#124; [log](https://openmmlab.oss-accelerate.aliyuncs.com/mmsegmentation/v0.5/ocrnet/ocrnet_hr18s_512x1024_40k_cityscapes/ocrnet_hr18s_512x1024_40k_cityscapes_20200601_033304.log.json)     |
@@ -24,6 +26,19 @@
 | OCRNet | HRNetV2p-W18-Small | 512x1024  |  160000 | -        | -              | 78.45 |         79.97 | [model](https://openmmlab.oss-accelerate.aliyuncs.com/mmsegmentation/v0.5/ocrnet/ocrnet_hr18s_512x1024_160k_cityscapes/ocrnet_hr18s_512x1024_160k_cityscapes_20200602_191005-f4a7af28.pth) &#124; [log](https://openmmlab.oss-accelerate.aliyuncs.com/mmsegmentation/v0.5/ocrnet/ocrnet_hr18s_512x1024_160k_cityscapes/ocrnet_hr18s_512x1024_160k_cityscapes_20200602_191005.log.json) |
 | OCRNet | HRNetV2p-W18       | 512x1024  |  160000 | -        | -              | 79.47 |         80.91 | [model](https://openmmlab.oss-accelerate.aliyuncs.com/mmsegmentation/v0.5/ocrnet/ocrnet_hr18_512x1024_160k_cityscapes/ocrnet_hr18_512x1024_160k_cityscapes_20200602_191001-b9172d0c.pth) &#124; [log](https://openmmlab.oss-accelerate.aliyuncs.com/mmsegmentation/v0.5/ocrnet/ocrnet_hr18_512x1024_160k_cityscapes/ocrnet_hr18_512x1024_160k_cityscapes_20200602_191001.log.json)     |
 | OCRNet | HRNetV2p-W48       | 512x1024  |  160000 | -        | -              | 81.35 |         82.70 | [model](https://openmmlab.oss-accelerate.aliyuncs.com/mmsegmentation/v0.5/ocrnet/ocrnet_hr48_512x1024_160k_cityscapes/ocrnet_hr48_512x1024_160k_cityscapes_20200602_191037-dfbf1b0c.pth) &#124; [log](https://openmmlab.oss-accelerate.aliyuncs.com/mmsegmentation/v0.5/ocrnet/ocrnet_hr48_512x1024_160k_cityscapes/ocrnet_hr48_512x1024_160k_cityscapes_20200602_191037.log.json)     |
+
+
+#### ResNet backbone
+
+| Method |      Backbone      | Crop Size | Batch Size | Lr schd | Mem (GB) | Inf time (fps) | mIoU  | mIoU(ms+flip)|
+|--------|--------------------|-----------|-----------|--------:|----------|----------------|------:|--------------:|
+| OCRNet  | R-101-D8 | 512x1024  | 8 |   40000 |   -  |    -  |   79.88  |  
+| OCRNet  | R-101-D8 | 512x1024  | 16 |   40000 |   -  |    -  |   80.29  |
+| OCRNetPlus   | R-101-D8 | 512x1024  | 16 |   40000 |   -  |  -  |  80.91,80.36,80.08  |   -  |    
+| OCRNetPlus   | R-101-D8 | 512x1024  | 16 |   60000 |   -  |  -  |  80.82,81.03,80.82  |   -  | 
+| DeepLabv3+   | R-101-D8 | 512x1024  | 16 |   60000 |   -  |  -  |   80.91,80.60       |   -  |  
+| DeepLabv3    | R-101-D8 | 512x1024  | 16 |   60000 |   -  |  -  |   80.10,79.96       |   -  |
+
 
 ### ADE20K
 | Method |      Backbone      | Crop Size | Lr schd | Mem (GB) | Inf time (fps) | mIoU  | mIoU(ms+flip) |                                                                                                                                                                                     download                                                                                                                                                                                     |
